@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var flash = require('req-flash');
 var multer = require('multer');
@@ -13,7 +14,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var sessionRouter = require('./routes/session');
-
+var productRouter = require('./routes/product');
 var app = express();
 
 // view engine setup
@@ -39,6 +40,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/session', sessionRouter);
+app.use('/products', productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
