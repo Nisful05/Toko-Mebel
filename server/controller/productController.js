@@ -97,3 +97,4 @@ exports.deleteProduct = async (req, res) => {
 // Ekspor middleware untuk digunakann dalam rute
 exports.authMiddleware = authMiddleware;
 exports.checRole = checkRole;
+module.exports.upload = upload;
