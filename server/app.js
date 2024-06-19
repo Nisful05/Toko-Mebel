@@ -22,6 +22,22 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('view engine', 'pug');
+
+// Parsing middleware
+app.use(express.urlencoded({ extended: true }));
+
+// Route untuk halaman login
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+// Route untuk memproses form login
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  // Lakukan autentikasi di sini
+  res.send(`Username: ${username}, Password: ${password}`);
+});
 
 app.use(logger('dev'));
 app.use(express.json());

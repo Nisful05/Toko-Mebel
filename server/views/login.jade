@@ -1,0 +1,36 @@
+//- login.pug
+
+doctype html
+html
+  head
+    title Login Page
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    style.
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+      .login-container {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+  body
+    .login-container
+      h2.text-center Login
+      form(action='/login', method='post')
+        .form-group
+          label(for='username') Username or Email
+          input.form-control(type='text', id='username', name='username', required)
+        .form-group
+          label(for='password') Password
+          input.form-control(type='password', id='password', name='password', required)
+        button.btn.btn-primary.btn-block(type='submit') Login
+      p.text-center
+        a(href='/register') Register
+
